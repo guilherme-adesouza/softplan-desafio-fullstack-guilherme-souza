@@ -1,8 +1,16 @@
+### Java ###
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+
+### Node ##
+*.log
+node_modules/
+.npm
+.env
+.env.test
 
 ### STS ###
 .apt_generated
