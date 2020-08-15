@@ -12,8 +12,8 @@ import javax.persistence.Id;
 public class User {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private long id;
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Integer id;
   private String name;
   private String email;
   @JsonIgnore

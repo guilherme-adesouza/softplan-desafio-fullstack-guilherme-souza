@@ -1,0 +1,20 @@
+.LoginPage {
+    margin: 0;
+    height: 100vh;
+}
+
+.LoginPage.row > .col.s6 {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.img-logo-wrapper {
+    max-width: 70vh;
+    margin: auto;
+    width: 100%;
+}
+
+.img-logo-wrapper > a {
+    color: #FFF;
+}
