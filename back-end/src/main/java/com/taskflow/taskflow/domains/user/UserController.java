@@ -1,4 +1,4 @@
-package com.taskflow.taskflow.user;
+package com.taskflow.taskflow.domains.user;
 
 import java.util.List;
 
@@ -20,8 +20,7 @@ public class UserController {
 
     @GetMapping
 	public List<User> getAllUser() {
-        final List<User> userList = this.userRepository.findAll();
-		return userList;
+		return this.userRepository.findAll();
 	}
 
 }

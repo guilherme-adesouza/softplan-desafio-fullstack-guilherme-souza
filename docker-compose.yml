@@ -3,7 +3,7 @@ version: "3.3"
 services:  
     
     db:
-        image: postgres:12
+        image: postgres:12.2-alpine
         environment:
             - POSTGRES_USER=taskflow
             - POSTGRES_PASSWORD=ef3e597c3effdacfbee881dab45db291128689e4

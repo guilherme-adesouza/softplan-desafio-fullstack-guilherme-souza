@@ -1,4 +1,4 @@
-package com.taskflow.taskflow.user;
+package com.taskflow.taskflow.domains.user;
 
 import java.util.List;
 

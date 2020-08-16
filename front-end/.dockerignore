@@ -1,5 +1,6 @@
 *
 !Dockerfile
+!jsconfig.json
 !package.json
 !package-lock.json
 !src
