@@ -3,9 +3,7 @@ package com.taskflow.taskflow.domains.userTasks;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("user-task")
@@ -19,9 +17,13 @@ public class UserTaskController {
 	}
 
     @GetMapping
-	public List<UserTask> getAllUserTasks() {
-        final List<UserTask> userTaskList = this.userTaskRepository.findAll();
-		return userTaskList;
+	public List<UserTask> getAllUsersTasks() {
+		return this.userTaskRepository.findAll();
+	}
+
+	@GetMapping("/users/{userId}")
+	public List<UserTask> getUserTasks(@PathVariable Integer userId) {
+		return this.userTaskRepository.findByUserId(userId);
 	}
 
 }

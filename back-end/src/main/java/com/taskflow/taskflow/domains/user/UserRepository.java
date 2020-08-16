@@ -4,9 +4,7 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-public interface UserRepository extends CrudRepository<User, Long> {
+public interface UserRepository extends CrudRepository<User, Integer> {
 
   List<User> findAll();
-  User findById(long id);
-  void deleteById(long id);
 }
