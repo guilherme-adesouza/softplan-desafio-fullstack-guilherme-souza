@@ -17,6 +17,7 @@ public class UserController {
 		public String name;
 		public String email;
 		public String password;
+		public String role;
 	}
 
 	@Autowired
@@ -56,6 +57,7 @@ public class UserController {
 			currentUser.setEmail(user.email);
 			currentUser.setName(user.name);
 			currentUser.setPassword(user.password);
+			currentUser.setRole(user.role);
 			return ResponseEntity.ok(this.userRepository.save(currentUser));
 		}
 		return ResponseEntity.notFound().build();
@@ -67,6 +69,7 @@ public class UserController {
 		user.setName(userVO.name);
 		user.setEmail(userVO.email);
 		user.setPassword(userVO.password);
+		user.setRole(userVO.role);
 		this.userRepository.save(user);
 	}
 

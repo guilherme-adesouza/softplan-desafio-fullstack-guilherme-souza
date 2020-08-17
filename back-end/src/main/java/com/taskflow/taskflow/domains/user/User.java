@@ -20,6 +20,7 @@ public class User {
   private Integer id;
   private String name;
   private String email;
+  private String role = "TRIATOR";
   @JsonIgnore
   private String password;
 
@@ -55,5 +56,13 @@ public class User {
     if (password != null && !password.isEmpty()) {
       this.password = PASSWORD_ENCODER.encode(password);
     }
+  }
+
+  public String getRole() {
+    return role;
+  }
+
+  public void setRole(String role) {
+    this.role = role;
   }
 }
