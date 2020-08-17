@@ -1,5 +1,9 @@
 # Taskflow - Process Manager
 
+Usuário padrão: admin@taskflow.com.br
+
+Senha: password
+
 ### Rodando a aplicação
 
 #### Docker
@@ -52,3 +56,14 @@ Como banco de dados, foi utilizado o **PostgreSQL 12** por familiaridade, sendo 
 
 Para a modelagem do banco de dados, foi utilizado o MySQLWorbench, podendo ser encontrado em `docs/taskflow.mwb`
 
+----
+
+### Resultado final
+
+Pendências:
+
+- Permissionamento por diferentes perfis (administrador, triador e finalizador)
+- Atribuir um ou mais usuários a realizar um parecer sobre um processo,
+- Visualizar processos pendentes de parecer.
+- Incluir o parecer sobre o processo.
+- Ajustes de layout
