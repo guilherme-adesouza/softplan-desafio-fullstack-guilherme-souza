@@ -4,11 +4,12 @@ import {
     Redirect,
 } from "react-router-dom";
 
-import Api from 'service/Api';
+//import Api from 'service/Api';
 import BasicPage from "pages/BasicPage";
+import { ROLES } from './Role';
 
 export const PrivateComponent = ({
-                                     adminRoute,
+                                     role = ROLES.VIEWER,
                                      Component,
                                      ...props
                                  }) => {
@@ -18,21 +19,21 @@ export const PrivateComponent = ({
     useEffect(() => {
         const doAuthenticate = async () => {
             try {
-                const {user} = await Api.Taskflow.User.verifyAuth();
-                const isAuthenticated = !!user && adminRoute ? user.admin : true;
+                // const {user} = await Api.Taskflow.User.verifyAuth();
+                const isAuthenticated = true;
                 setState({
                     loading: false,
-                    isLogged: !!user,
+                    isLogged: true,//!!user,
                     isAuthenticated,
                 });
             } catch (e) {
-                console.log(e);
+                console.error(e);
                 alert(e);
                 setState({loading: false});
             }
         };
         doAuthenticate();
-    }, [adminRoute]);
+    }, [role]);
 
     if (state.loading) {
         return <span>Loading...</span>;
@@ -58,6 +59,6 @@ export function PrivateRoute({component: Component, ...rest}) {
 
 export function AdminRoute({component: Component, ...rest}) {
     return (
-        <Route {...rest} render={props => (<PrivateComponent Component={Component} adminRoute={true} {...props}/>)}/>
+        <Route {...rest} render={props => (<PrivateComponent Component={Component} role={ROLES.SUPER} {...props}/>)}/>
     )
 }

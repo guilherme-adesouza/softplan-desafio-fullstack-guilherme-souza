@@ -52,6 +52,8 @@ public class User {
   }
 
   public void setPassword(String password) {
-    this.password = PASSWORD_ENCODER.encode(password);
+    if (password != null && !password.isEmpty()) {
+      this.password = PASSWORD_ENCODER.encode(password);
+    }
   }
 }

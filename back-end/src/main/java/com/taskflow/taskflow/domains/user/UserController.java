@@ -13,6 +13,12 @@ public class UserController {
 
 	private final UserRepository userRepository;
 
+	static class UserVO {
+		public String name;
+		public String email;
+		public String password;
+	}
+
 	@Autowired
 	public UserController(UserRepository userRepository) {
 		this.userRepository = userRepository;
@@ -43,19 +49,24 @@ public class UserController {
 	}
 
 	@PutMapping("/{userId}")
-	public ResponseEntity<User> updateUser(@PathVariable Integer userId, @RequestBody User user) {
+	public ResponseEntity<User> updateUser(@PathVariable Integer userId, @RequestBody UserVO user) {
 		final Optional<User> userOpt = this.userRepository.findById(userId);
 		if (userOpt.isPresent()) {
 			User currentUser = userOpt.get();
-			currentUser.setEmail(user.getEmail());
-			currentUser.setName(user.getName());
+			currentUser.setEmail(user.email);
+			currentUser.setName(user.name);
+			currentUser.setPassword(user.password);
 			return ResponseEntity.ok(this.userRepository.save(currentUser));
 		}
 		return ResponseEntity.notFound().build();
 	}
 
 	@PostMapping
-	public void createUser(@RequestBody User user) {
+	public void createUser(@RequestBody UserVO userVO) {
+		User user = new User();
+		user.setName(userVO.name);
+		user.setEmail(userVO.email);
+		user.setPassword(userVO.password);
 		this.userRepository.save(user);
 	}
 

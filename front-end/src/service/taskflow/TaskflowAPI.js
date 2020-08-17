@@ -1,10 +1,12 @@
 import axios from "axios";
 
 import UserAPI from "service/taskflow/UserAPI";
+import authHeader from "service/taskflow/AuthHeader";
 
 export const request = axios.create({
     baseURL: '/api',
-    timeout: 1000,
+    timeout: 30000,
+    headers: authHeader()
 });
 
 class TaskflowAPI {

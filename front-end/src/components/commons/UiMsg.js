@@ -2,11 +2,12 @@ import "components/commons/UiMsg.css"
 
 class UiMsg {
     static error({message = '', error = ''}) {
-        //M.toast({html: message || error, classes: 'rounded', displayLength: 1500});
+        alert(`${message}: \n ${error}`);
     }
 
     static alert({message = ''}) {
-        //M.toast({html: message, classes: 'rounded', displayLength: 1500});
+        alert(message);
+        
     }
 
     static success({message = ''}) {

@@ -28,7 +28,7 @@ const SelectField = ({
                            title = null,
                            options = [],
                            customChange = null,
-                           keys={value: 'value', label: 'label'},
+                           keys = {value: 'value', label: 'label'},
                            emptyOption = true,
                            field,
                            form,

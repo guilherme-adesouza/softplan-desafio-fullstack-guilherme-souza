@@ -1,7 +1,6 @@
 import {request} from "service/taskflow/TaskflowAPI";
 import BaseServiceCRUD from "service/taskflow/BaseServiceCRUD";
-
-const user = {id: 1, name: 'Admnistrator', email: 'admin@', role: 'SUPER'};
+import Storage from "service/taskflow/Storage";
 
 class UserAPI extends BaseServiceCRUD {
 
@@ -9,19 +8,17 @@ class UserAPI extends BaseServiceCRUD {
         super('/user')
     }
 
-    verifyAuth = async () => {
-        //const {data} = await request.post('/auth/verify');
-        return user;
-    }
-
     login = async (credentials) => {
-        //const {data} = await request.post('/auth/login', credentials);
-        return user;
+        const {data} = await request.post('/authenticate', credentials);
+        if (data.token) {
+            Storage.setCurrentUser(data);
+        }
+        return data;
     };
 
-    logout = async () => {
-        await request.get('/auth/logout');
-    };
+    logout = () => {
+        Storage.logout();
+    }
 }
 
 export default UserAPI;

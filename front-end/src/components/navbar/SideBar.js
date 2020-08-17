@@ -34,7 +34,6 @@ const SideBar = (props) => {
         <>
             <ul id="slide-out" className="sidenav" ref={sidenav}>
                 {SIDE_LINKS.map((sl, idx) => {
-                    if (sl.admin) return null;
                     const sideNav = sl.links;
                     return (
                         <div key={idx}>
