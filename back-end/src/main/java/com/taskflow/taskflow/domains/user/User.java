@@ -1,7 +1,7 @@
 package com.taskflow.taskflow.domains.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import com.taskflow.taskflow.security.TaskflowPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.Entity;
@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @Entity
 @Table(name = "users")
 public class User {
-  public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
+  public static final PasswordEncoder PASSWORD_ENCODER = new TaskflowPasswordEncoder();
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
