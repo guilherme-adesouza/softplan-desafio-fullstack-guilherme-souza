@@ -1,7 +1,4 @@
-nav .brand-logo {
-    position: relative;
-}
-
-.main-nav .user-view img {
-    height: 100%;
+ul.sidenav {
+    display: flex;
+    width: 100%;
 }

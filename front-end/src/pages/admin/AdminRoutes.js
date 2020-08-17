@@ -1,17 +1,17 @@
 import {AdminRoute} from "router/Route";
-import CreateUser from "pages/admin/CreateUserPage";
+import UserFormPage from "pages/admin/UserFormPage";
 import ListUserPage from "pages/admin/ListUserPage";
 
 const routes = [
     {
         path: '/admin/user/form/:id',
         breadcrumbTitle: 'Edição de Usuário',
-        component: CreateUser,
+        component: UserFormPage,
     },
     {
         path: '/admin/user/form/',
         breadcrumbTitle: 'Criação de Usuário',
-        component: CreateUser,
+        component: UserFormPage,
     },
     {
         path: '/admin/user',

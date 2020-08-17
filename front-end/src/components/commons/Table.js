@@ -12,7 +12,7 @@ const Table = ({
                    itemTitle = '',
                }) => {
 
-    const _header = header || (!!data && data.length > 0) ? Object.keys(data[0]) : [];
+    const _header = header || (!!data && data.length > 0 ? Object.keys(data[0]) : []);
 
     return (
         <table>

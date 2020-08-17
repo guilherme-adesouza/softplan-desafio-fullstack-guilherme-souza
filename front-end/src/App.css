@@ -6,3 +6,18 @@ header {
   background-color: var(--main-app-color);
   color: var(--main-app-contrast);
 }
+
+.card-content {
+  width: 80%;
+  margin: auto;
+}
+
+.Field {
+  text-align: left;
+  padding: 10px 0;
+}
+
+.Field label.field-description.active {
+  display: block;
+  margin-bottom: 10px;
+}
